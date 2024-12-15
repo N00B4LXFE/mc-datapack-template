@@ -1,0 +1,48 @@
+This file is supposed to be a beginner guide to making datapacks
+
+Made for 1.21.1, as the version goes up, look in pack.mcmeta and change the pack format to the version you want, (this probably wont work because minecraft keeps changing the names of folders)
+https://minecraft.wiki/w/Pack_format
+
+1: Making Namespaces
+
+To make a namespace, just copy the one named template, or change its name (you can delete the folders you dont want)
+
+To make load and tick functions work for your new namespace, you need to register the functions in [data/minecraft/tags/function/]
+
+The minecraft namespace is slightly special-er but not very important besides starting other namespaces and changing vanilla (like worldgen or mob behaviour)
+
+1.1: Registering load.mcfunction and tick.mcfunction
+[data/minecraft/tags/function/load.json or tick.json]
+make a json list in both of them and give them a value (or multiple)
+{
+	"values" : [
+		"{namespace}:{any name will do same thing as the title of file (load or tick)}",
+		"optional second function for the same thing, make sure to get rid of the comma above if you dont use this"
+	]
+}
+
+by the way, if you want to change the name of the namespace, you will need to go to there and change the namespace there, because they are named template
+
+2: Things you will probably use:
+
+Usually the most important folders in the namespaces are:
+.../advancement - useful not for its intended purpose, but for instead setting triggers for other functions
+.../dimension - allows for making an entirely new dimesion, use this with [.../worldgen] to choose from presets from the vanilla dimensions, or do some wizardry and make your own
+.../enchantment - lets you make custom enchantments, these enchantments can modify attributes like damage, or can also be used to trigger functions (very helpful)
+.../function - the heart of your entire datapack, these are responsible for running all commands, make sure to end the files here with ".mcfunction"
+.../loot_table - can be used to generate random loot
+.../predicate - for some reason, even though minecraft can detect all conditions, you only get access to some of them, predicates give you the rest of these conditions, predicates also can be used to make random probability
+.../recipe - can be used to make custom recipes, can give custom items if you mess with advancements
+.../structure - allows for custom structures, very complicated though so i cant help you here
+.../tags - these can be used to group entities, blocks, and other stuff as a single selector, pretty helpful
+.../worldgen - lets you change the worldgen, also very complicated
+
+The rest of these folders will rarely be used, or are just part of the ones here
+
+
+
+
+
+
+Sincerely,
+awesomesauce
