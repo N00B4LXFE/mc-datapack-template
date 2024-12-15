@@ -1,2 +1,2 @@
 # mc-datapack-template
-full template for minecraft datapacks (includes a guidebook that is not well written)
+full template for 1.21-1.21.1 minecraft datapack
